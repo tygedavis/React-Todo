@@ -2,6 +2,14 @@ import React from 'react';
 import Todolist from './components/TodoComponents/TodoList';
 import TodoForm from './components/TodoComponents/TodoForm';
 
+const todo = [
+  {
+    task: '',
+    id: Date.now(),
+    completed: false
+  }
+]
+
 class App extends React.Component {
   // you will need a place to store your state in this component.
   // design `App` to be the parent component of your application.
@@ -9,9 +17,7 @@ class App extends React.Component {
   constructor() {
     super();
     this.state ={
-      task: '',
-      id: Date.now(),
-      completed: false
+      todo: todo
     };
   };
 
