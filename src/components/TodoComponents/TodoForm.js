@@ -2,10 +2,10 @@ import React from 'react';
 
 class TodoForm extends React.Component {
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      todo: ''
+      newTodo: ''
     }
   }
 
@@ -17,11 +17,12 @@ class TodoForm extends React.Component {
 	};
 
   handleSubmit = e => {
-    e.preventDefault()
+    e.preventDefault();
     this.props.addTodo(this.state.newTodo)
     this.setState({
       newTodo: ''
     });
+    console.log('This is handle submit')
   };
 
   render() {
