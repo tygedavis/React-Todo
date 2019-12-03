@@ -22,7 +22,7 @@ class TodoForm extends React.Component {
     this.setState({
       newTodo: ''
     });
-    console.log('This is handle submit')
+    // console.log('This is handle submit')
   };
 
   render() {
@@ -36,7 +36,7 @@ class TodoForm extends React.Component {
             value={this.state.newTodo}
             onChange={this.handleChanges}
             />
-          <button>Submit</button>
+          <button>Add</button>
         </div>
         <button>Clear All</button>
       </form>

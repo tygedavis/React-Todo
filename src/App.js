@@ -26,11 +26,15 @@ class App extends React.Component {
       id: Date.now(),
       completed: false
     }
-    console.log(newTodo, ' newTodo')
+    // console.log(newTodo, ' newTodo')
     this.setState({
       todo: [...this.state.todo, newTodo]
     });
   };
+
+  handleComplete = () => {
+    this.setState({ completed : !this.state.completed })
+}
 
   //Requirements:
   // List of Todos, Input Field to display the todos, a submit button, and a clear all button
@@ -38,7 +42,7 @@ class App extends React.Component {
     return (
       <div>
         <h2>Welcome to your Todo App!</h2>
-        <Todolist todo={this.state.todo}/>
+        <Todolist todo={this.state.todo} handleComplete={this.handleComplete} />
         <TodoForm addTodo={this.addTodo} />
       </div>
     );
