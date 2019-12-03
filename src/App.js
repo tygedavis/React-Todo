@@ -32,9 +32,20 @@ class App extends React.Component {
     });
   };
 
-  handleComplete = () => {
-    this.setState({ completed : !this.state.completed })
-}
+  handleComplete = itemId => {
+    this.setState({
+    todo: this.state.todo.map(item => {
+        if(item.id === itemId) {
+          return{
+          ...item,
+          completed: !item.completed
+          }
+        }else{
+          return item
+        };
+      })
+    });
+  };
 
   //Requirements:
   // List of Todos, Input Field to display the todos, a submit button, and a clear all button
