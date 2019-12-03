@@ -47,6 +47,14 @@ class App extends React.Component {
     });
   };
 
+  clearAll = () => {
+    this.setState({
+      todo: this.state.todo.filter(item => {
+          return item.completed === false
+      })
+    });
+  };
+
   //Requirements:
   // List of Todos, Input Field to display the todos, a submit button, and a clear all button
   render() {
@@ -54,7 +62,7 @@ class App extends React.Component {
       <div>
         <h2>Welcome to your Todo App!</h2>
         <Todolist todo={this.state.todo} handleComplete={this.handleComplete} />
-        <TodoForm addTodo={this.addTodo} />
+        <TodoForm addTodo={this.addTodo} clearAll={this.clearAll}/>
       </div>
     );
   }
